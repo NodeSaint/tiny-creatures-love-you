@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="tiny cat">
+  <!-- ears -->
+  <path d="M20 40 L30 9 L49 33 Z" fill="#F4AFC2"/>
+  <path d="M80 40 L70 9 L51 33 Z" fill="#F4AFC2"/>
+  <path d="M27 36 L33 18 L43 33 Z" fill="#F7849B"/>
+  <path d="M73 36 L67 18 L57 33 Z" fill="#F7849B"/>
+  <!-- head -->
+  <ellipse cx="50" cy="55" rx="40" ry="36" fill="#F4AFC2"/>
+  <!-- blush -->
+  <ellipse cx="27" cy="63" rx="7" ry="4.5" fill="#F6889E" opacity="0.7"/>
+  <ellipse cx="73" cy="63" rx="7" ry="4.5" fill="#F6889E" opacity="0.7"/>
+  <!-- whiskers -->
+  <g stroke="#E07F97" stroke-width="2" stroke-linecap="round" fill="none">
+    <path d="M6 52 q14 -3 22 1"/>
+    <path d="M6 62 q14 2 22 2"/>
+    <path d="M94 52 q-14 -3 -22 1"/>
+    <path d="M94 62 q-14 2 -22 2"/>
+  </g>
+  <!-- happy eyes -->
+  <g stroke="#3A3340" stroke-width="4.5" stroke-linecap="round" fill="none">
+    <path d="M31 52 q7 -10 14 0"/>
+    <path d="M55 52 q7 -10 14 0"/>
+  </g>
+  <!-- heart nose -->
+  <path d="M44 59 q6 -7 12 0 q-6 9 -6 9 q0 0 -6 -9" fill="#E5728A"/>
+  <!-- smile -->
+  <path d="M40 66 q10 9 20 0" stroke="#7A5C57" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

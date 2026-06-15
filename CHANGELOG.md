@@ -32,5 +32,9 @@ All notable changes to this project are documented here.
   emoji favicon, generic OG preview meta.
 - Docs: README, PRIMER, design spec.
 
-### Parked for later
-- Favicon image file + designed WhatsApp/iMessage OG preview card (`assets/og-card.png`).
+### 2026-06-15 — favicon + link-preview card
+- Added designed cat-face favicon (`assets/favicon.svg` + `favicon-32.png` +
+  `apple-touch-icon.png`), replacing the emoji data-URI.
+- Added dusk-themed 1200×630 link-preview card (`assets/og-card.jpg`, 47KB —
+  under WhatsApp's preview size limit) rendered with the real cat.
+- Wired full Open Graph + Twitter Card meta (absolute URLs) + `theme-color`.

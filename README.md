@@ -6,7 +6,7 @@ link — no backend, no accounts, no app to install.
 
 **[ ▶ Live demo ](https://nodesaint.github.io/tiny-creatures-love-you/)**
 
-![generic preview: someone made you a tiny cat 🐱](assets/og-card.png)
+![generic preview: someone made you a tiny cat 🐱](assets/og-card.jpg)
 
 ## What it does
 
