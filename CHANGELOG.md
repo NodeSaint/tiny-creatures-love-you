@@ -13,6 +13,13 @@ All notable changes to this project are documented here.
   simulated 3-days-away return ("I saved a smile for you", sad face + teardrop).
   Zero console errors.
 
+### 2026-06-15 — licence + gentler decay
+- Added `LICENSE` (MIT, © NodeSaint) to match the README.
+- Softened the happiness decay (`DECAY_PER_HOUR` 1.6 → 0.7 in `js/state.js`).
+  Previously the cat hit the floor (sad) in ~1.4 days; now the absence reads as a
+  gradient — ~1 day content, ~2 days lonely, ~3 days sad — bottoming out just
+  past the three-day mark.
+
 ## [Unreleased] — dev branch
 
 ### 2026-06-15 — initial build (branch: `dev`)

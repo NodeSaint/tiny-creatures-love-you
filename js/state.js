@@ -6,9 +6,11 @@ const MIN_HAPPINESS = 25; // it gets lonely, never miserable
 const MAX_HAPPINESS = 100;
 const START_HAPPINESS = 78;
 
-// How much happiness drains per hour away. Tuned so a full day away costs a
-// noticeable chunk without ever bottoming out below MIN_HAPPINESS.
-const DECAY_PER_HOUR = 1.6;
+// How much happiness drains per hour away. Tuned for a gentle slide so the
+// absence reads as a gradient rather than slamming to the floor: from a fresh
+// ~78, roughly a day away → content, two days → lonely, three days → sad (the
+// teardrop face), bottoming out at MIN_HAPPINESS just past the three-day mark.
+const DECAY_PER_HOUR = 0.7;
 
 const HOUR = 1000 * 60 * 60;
 const DAY = HOUR * 24;
