@@ -133,9 +133,11 @@ export function startCreator(root) {
       await navigator.clipboard.writeText(linkField.value);
       copyBtn.textContent = 'copied! 💛';
     } catch (_) {
+      // Older/insecure-context fallback. Leave the link selected either way so
+      // the user can copy by hand if execCommand is unavailable.
       linkField.select();
-      document.execCommand('copy');
-      copyBtn.textContent = 'copied! 💛';
+      const ok = document.execCommand && document.execCommand('copy');
+      copyBtn.textContent = ok ? 'copied! 💛' : 'press ⌘/Ctrl+C';
     }
     setTimeout(() => (copyBtn.textContent = 'copy link'), 1800);
   });

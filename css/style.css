@@ -24,10 +24,10 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--ink);
+  min-height: 100vh;       /* fallback for browsers without dvh */
   min-height: 100dvh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 24px;
   overflow-x: hidden;
   transition: background 1.2s ease;
@@ -71,7 +71,10 @@ body[data-sky='night'] {
 body[data-sky='night'] .stars { opacity: 0.8; animation: twinkle 4s ease-in-out infinite; }
 @keyframes twinkle { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.9; } }
 
-.view { width: 100%; }
+/* auto-margins centre the view in spare space, but collapse to 0 when content
+   is taller than the viewport — so the top stays reachable and the page scrolls
+   (plain flex centring clips the overflow above the scroll origin). */
+.view { width: 100%; margin: auto; }
 [hidden] { display: none !important; }
 
 /* ===========================  the cat card  ============================= */
@@ -241,7 +244,7 @@ body[data-sky='night'] .stars { opacity: 0.8; animation: twinkle 4s ease-in-out 
 .make-own:hover { opacity: 1; }
 
 /* ===========================  create mode  ============================= */
-#create-view { max-width: 1000px; margin: 0 auto; padding: 8px 0 40px; }
+#create-view { max-width: 1000px; padding: 8px 0 40px; }
 
 .create-head { text-align: center; margin-bottom: 26px; animation: rise 0.7s ease both; }
 .create-head h1 {

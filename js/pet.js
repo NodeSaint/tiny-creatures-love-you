@@ -41,6 +41,8 @@ export function startPet(gift, root, { preview = false } = {}) {
   const cat = new Cat(mount, { color: gift.color, name: gift.catName });
 
   let lastInteraction = now;
+  const timers = []; // opening setTimeouts, cleared on destroy so a torn-down
+                     // preview doesn't fire bounces/hearts over its replacement
 
   function refresh() {
     const mood = moodFor(state.happiness);
@@ -71,13 +73,15 @@ export function startPet(gift, root, { preview = false } = {}) {
 
   // If today is a special occasion, surface it a beat after the greeting.
   const occ = occasionMessage(gift.occasions, now);
-  if (occ) setTimeout(() => say(occ), 2600);
+  if (occ) timers.push(setTimeout(() => say(occ), 2600));
 
   // A happy little welcome bounce.
-  setTimeout(() => {
-    cat.squash();
-    cat.burstHearts(mood === 'sad' ? 3 : 5);
-  }, 400);
+  timers.push(
+    setTimeout(() => {
+      cat.squash();
+      cat.burstHearts(mood === 'sad' ? 3 : 5);
+    }, 400)
+  );
 
   persist();
 
@@ -91,32 +95,34 @@ export function startPet(gift, root, { preview = false } = {}) {
     say(petLine());
     persist();
   }
-  mount.addEventListener('click', pet);
-  mount.addEventListener('keydown', (e) => {
+  function onKey(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       pet();
     }
-  });
+  }
+  mount.addEventListener('click', pet);
+  mount.addEventListener('keydown', onKey);
   mount.tabIndex = 0;
   mount.setAttribute('role', 'button');
   mount.setAttribute('aria-label', 'Pet ' + (gift.catName || 'the cat'));
 
   // --- feeding compliments ---
+  function onFeed(e) {
+    e.preventDefault();
+    const text = feedInput.value.trim();
+    if (!text) return;
+    lastInteraction = Date.now();
+    const reaction = complimentReaction(text);
+    cat.burstHearts(reaction.hearts);
+    adjustHappiness(state, FEED_GAIN);
+    refresh();
+    say(reaction.line);
+    persist();
+    feedInput.value = '';
+  }
   if (feedForm && feedInput) {
-    feedForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const text = feedInput.value.trim();
-      if (!text) return;
-      lastInteraction = Date.now();
-      const reaction = complimentReaction(text);
-      cat.burstHearts(reaction.hearts);
-      adjustHappiness(state, FEED_GAIN);
-      refresh();
-      say(reaction.line);
-      persist();
-      feedInput.value = '';
-    });
+    feedForm.addEventListener('submit', onFeed);
   }
 
   // --- idle chatter ---
@@ -125,10 +131,14 @@ export function startPet(gift, root, { preview = false } = {}) {
     if (Math.random() < 0.6) say(idleLine(cat.mood, gift.compliments));
   }, 9000);
 
-  // Tidy up if the caller tears the preview down.
+  // Tidy up if the caller tears the preview down — remove every listener and
+  // timer this call added, so nothing accumulates across preview rebuilds.
   return function destroy() {
     clearInterval(idleTimer);
+    timers.forEach(clearTimeout);
     cat.stop();
     mount.removeEventListener('click', pet);
+    mount.removeEventListener('keydown', onKey);
+    if (feedForm) feedForm.removeEventListener('submit', onFeed);
   };
 }
