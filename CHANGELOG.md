@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here.
 
+## Deployed
+
+### 2026-06-15 — first deploy (branch: `main` → GitHub Pages)
+- Pushed `main` + `dev` to `github.com/NodeSaint/tiny-creatures-love-you` (public).
+- Enabled GitHub Pages (main / root). Live at
+  https://nodesaint.github.io/tiny-creatures-love-you/
+- Verified end-to-end in a headless browser: create → share link (188 chars) →
+  first-open greeting → pet (hearts + line) → feed "i love you" (keyword bonus) →
+  simulated 3-days-away return ("I saved a smile for you", sad face + teardrop).
+  Zero console errors.
+
 ## [Unreleased] — dev branch
 
 ### 2026-06-15 — initial build (branch: `dev`)

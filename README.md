@@ -4,7 +4,7 @@ A little cat that waits for you, remembers you, and saves a smile for when you
 come back. Make a personalized one for someone you love and send it as a single
 link — no backend, no accounts, no app to install.
 
-**[ ▶ Live demo ](#)** *(add your GitHub Pages URL here once deployed)*
+**[ ▶ Live demo ](https://nodesaint.github.io/tiny-creatures-love-you/)**
 
 ![generic preview: someone made you a tiny cat 🐱](assets/og-card.png)
 
