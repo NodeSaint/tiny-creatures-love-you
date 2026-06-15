@@ -1,0 +1,69 @@
+# 🐱 A Tiny Cat That Loves You
+
+A little cat that waits for you, remembers you, and saves a smile for when you
+come back. Make a personalized one for someone you love and send it as a single
+link — no backend, no accounts, no app to install.
+
+**[ ▶ Live demo ](#)** *(add your GitHub Pages URL here once deployed)*
+
+![generic preview: someone made you a tiny cat 🐱](assets/og-card.png)
+
+## What it does
+
+- **Make a cat** — pick a colour, name it, write your own sweet things and inside
+  jokes, add special days (birthdays, anniversaries). Get a shareable link.
+- **They open it** — the cat greets them by name and is instantly happy to see them.
+- **It remembers** — come back after a while and it reacts: *"I missed you"*,
+  *"you were gone 3 days… I saved a smile for you."*
+- **Pet it** (tap the cat) and **feed it compliments** (type something sweet) to
+  cheer it up. It purrs, bursts hearts, and talks back.
+
+## How it works
+
+- 100% static — plain HTML/CSS/JS, runs anywhere, perfect for GitHub Pages.
+- All personalized data is packed into the URL **fragment** (after `#`). Browsers
+  never send the fragment to any server, so your private notes can't leak.
+- The cat's mood/memory lives in the recipient's `localStorage`, keyed per link.
+- One tiny vendored dependency: [`lz-string`](https://github.com/pieroxy/lz-string)
+  (~5KB) to keep the link short.
+
+## Run it locally
+
+It's static, so any web server works (a server is needed because it uses ES
+modules — opening `index.html` via `file://` won't load them):
+
+```bash
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
+
+## Deploy to GitHub Pages
+
+1. Push this repo to GitHub.
+2. **Settings → Pages → Build and deployment → Source: Deploy from a branch.**
+3. Pick the `main` branch, `/ (root)` folder, save.
+4. Your site goes live at `https://<username>.github.io/<repo>/`.
+
+## Make your own version
+
+Just open the live site — the create form does everything. No code needed.
+To customize the built-in cat lines, edit [`js/messages.js`](js/messages.js).
+
+## Project layout
+
+```
+index.html            page shell + both views
+css/style.css         all styles (the living dusk sky lives here)
+js/main.js            router: create mode vs pet mode
+js/creator.js         the "make a cat" form + live preview
+js/pet.js             brings a cat to life (greeting, petting, feeding)
+js/cat.js             the SVG cat: shapes, moods, animations, hearts
+js/state.js           localStorage memory + happiness decay
+js/messages.js        the cat's built-in lines
+js/share.js           encode/decode a gift to/from the URL
+vendor/lz-string.min.js
+```
+
+## License
+
+MIT — make cats, send love.

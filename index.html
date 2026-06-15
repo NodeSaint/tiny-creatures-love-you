@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-sky="dusk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>a tiny cat that loves you</title>
+  <meta name="description" content="A tiny cat that waits for you, remembers you, and saved a smile for when you come back. Make one for someone you love." />
+
+  <!-- Generic link-preview card (the personalized data lives in the # fragment,
+       which crawlers can't read — so every preview is the same, by design). -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="someone made you a tiny cat 🐱" />
+  <meta property="og:description" content="open it — it's been waiting for you 💛" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Emoji favicon, no asset file needed. -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-sky="dusk">
+  <div class="stars" aria-hidden="true"></div>
+
+  <!-- ============================ PET MODE ============================ -->
+  <main id="pet-view" class="view" hidden>
+    <div class="cat-card">
+      <div class="cat-mount" id="cat-mount"></div>
+      <p class="speech" id="speech" aria-live="polite"></p>
+
+      <div class="mood-meter" title="how loved your cat feels">
+        <div class="mood-fill"></div>
+      </div>
+
+      <form class="feed" autocomplete="off">
+        <input class="feed-input" type="text" maxlength="120" placeholder="say something sweet…" aria-label="feed a compliment" />
+        <button type="submit">feed 💛</button>
+      </form>
+
+      <p class="pet-hint">psst — tap the cat to pet it</p>
+    </div>
+
+    <a class="make-own" href="#" onclick="location.href=location.pathname;return false;">make your own&nbsp;🐱</a>
+  </main>
+
+  <!-- ============================ CREATE MODE ========================= -->
+  <section id="create-view" class="view" hidden>
+    <header class="create-head">
+      <h1>a tiny cat<br /><span>that loves you</span></h1>
+      <p class="tagline">make a little cat for someone you love. it remembers them, waits for them, and saves a smile for when they come back.</p>
+    </header>
+
+    <div class="create-grid">
+      <!-- live preview -->
+      <div class="preview-pane">
+        <div class="cat-card preview-card" id="preview">
+          <div class="cat-mount"></div>
+          <p class="speech"></p>
+          <div class="mood-meter"><div class="mood-fill"></div></div>
+          <form class="feed" autocomplete="off">
+            <input class="feed-input" type="text" maxlength="120" placeholder="say something sweet…" aria-label="feed a compliment" />
+            <button type="submit">feed 💛</button>
+          </form>
+          <p class="pet-hint">this is live — pet it &amp; feed it 💛</p>
+        </div>
+      </div>
+
+      <!-- the form -->
+      <form id="create-form" class="create-form">
+        <label class="field">
+          <span>their name</span>
+          <input id="f-to" type="text" maxlength="24" placeholder="Sarah" />
+        </label>
+
+        <label class="field">
+          <span>a note for when they first open it</span>
+          <textarea id="f-note" maxlength="140" rows="2" placeholder="made this for you 💌 — open me when you miss me"></textarea>
+        </label>
+
+        <label class="field">
+          <span>name the cat</span>
+          <input id="f-catname" type="text" maxlength="18" placeholder="Mochi" />
+        </label>
+
+        <div class="field">
+          <span>pick a colour</span>
+          <div id="color-row" class="color-row"></div>
+        </div>
+
+        <div class="field">
+          <span>sweet things it can say <em>(your words &amp; inside jokes)</em></span>
+          <div id="compliment-list"></div>
+          <button type="button" id="add-compliment" class="add-btn">+ add another</button>
+        </div>
+
+        <div class="field">
+          <span>special days <em>(optional — shown on the day)</em></span>
+          <div id="occasion-list"></div>
+          <button type="button" id="add-occasion" class="add-btn">+ add a special day</button>
+        </div>
+
+        <button type="submit" class="make-btn">make my cat 🐱</button>
+
+        <div id="link-out" class="link-out" hidden>
+          <p>here's the link — send it to them 💛</p>
+          <div class="link-row">
+            <input id="link-field" type="text" readonly />
+            <button type="button" id="copy-btn">copy link</button>
+          </div>
+          <a id="open-btn" class="open-link" target="_blank" rel="noopener">open it yourself ↗</a>
+          <p class="privacy-note">your words live only inside this link — they never touch a server.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- lz-string as a plain global, then the app as a module -->
+  <script src="vendor/lz-string.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
