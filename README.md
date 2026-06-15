@@ -1,8 +1,8 @@
 # 🐱 A Tiny Cat That Loves You
 
-A little cat that waits for you, remembers you, and saves a smile for when you
-come back. Make a personalized one for someone you love and send it as a single
-link — no backend, no accounts, no app to install.
+A little cat that remembers you and saves a smile for when you come back. Make
+one for someone you love and send it as a single link. No backend, no accounts,
+nothing to install.
 
 **[ ▶ Live demo ](https://nodesaint.github.io/tiny-creatures-love-you/)**
 
@@ -10,18 +10,18 @@ link — no backend, no accounts, no app to install.
 
 ## What it does
 
-- **Make a cat** — pick a colour, name it, write your own sweet things and inside
-  jokes, add special days (birthdays, anniversaries). Get a shareable link.
-- **They open it** — the cat greets them by name and is instantly happy to see them.
-- **It remembers** — come back after a while and it reacts: *"I missed you"*,
+- **Make a cat.** Pick a colour, name it, write your own sweet things and inside
+  jokes, add special days like birthdays. You get a link to share.
+- **They open it.** The cat greets them by name and is happy to see them.
+- **It remembers.** Come back after a while and it reacts: *"I missed you"*,
   *"you were gone 3 days… I saved a smile for you."*
 - **Pet it** (tap the cat) and **feed it compliments** (type something sweet) to
   cheer it up. It purrs, bursts hearts, and talks back.
 
 ## How it works
 
-- 100% static — plain HTML/CSS/JS, runs anywhere, perfect for GitHub Pages.
-- All personalized data is packed into the URL **fragment** (after `#`). Browsers
+- 100% static: plain HTML/CSS/JS, runs anywhere, perfect for GitHub Pages.
+- All personal data is packed into the URL **fragment** (after `#`). Browsers
   never send the fragment to any server, so your private notes can't leak.
 - The cat's mood/memory lives in the recipient's `localStorage`, keyed per link.
 - One tiny vendored dependency: [`lz-string`](https://github.com/pieroxy/lz-string)

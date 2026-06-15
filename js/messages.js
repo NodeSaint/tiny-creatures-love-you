@@ -54,13 +54,13 @@ export function greeting(phase, gift, state) {
     case 'first':
       return gift.note
         ? gift.note
-        : `hi ${name} — ${cat} has been waiting just for you 💛`;
+        : `hi ${name}, ${cat} has been waiting just for you 💛`;
     case 'moments':
       return `back already? ${cat} is delighted 😸`;
     case 'minutes':
       return `you're back! ${cat} perked right up`;
     case 'hours':
-      return `there you are — i missed you 🥺`;
+      return `there you are, i missed you 🥺`;
     case 'days': {
       const d = state.__daysAway || 1;
       return `you were gone ${d} day${d === 1 ? '' : 's'}… i saved a smile for you 💛`;

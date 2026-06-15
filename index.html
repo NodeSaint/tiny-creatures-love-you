@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
   <title>a tiny cat that loves you</title>
-  <meta name="description" content="A tiny cat that waits for you, remembers you, and saved a smile for when you come back. Make one for someone you love." />
+  <meta name="description" content="A little cat that remembers you and saves a smile for when you come back. Make one for someone you love." />
 
-  <!-- Generic link-preview card (the personalized data lives in the # fragment,
-       which crawlers can't read — so every preview is the same, by design). -->
+  <!-- Generic link-preview card (the personalised data lives in the # fragment,
+       which crawlers can't read, so every preview is the same, by design). -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nodesaint.github.io/tiny-creatures-love-you/" />
   <meta property="og:title" content="someone made you a tiny cat 🐱" />
-  <meta property="og:description" content="open it — it's been waiting for you 💛" />
+  <meta property="og:description" content="open it, it's been waiting for you 💛" />
   <meta property="og:image" content="https://nodesaint.github.io/tiny-creatures-love-you/assets/og-card.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="someone made you a tiny cat 🐱" />
-  <meta name="twitter:description" content="open it — it's been waiting for you 💛" />
+  <meta name="twitter:description" content="open it, it's been waiting for you 💛" />
   <meta name="twitter:image" content="https://nodesaint.github.io/tiny-creatures-love-you/assets/og-card.jpg" />
 
   <!-- Favicons -->
@@ -51,7 +51,7 @@
         <button type="submit">feed 💛</button>
       </form>
 
-      <p class="pet-hint">psst — tap the cat to pet it</p>
+      <p class="pet-hint">psst, tap the cat to pet it</p>
     </div>
 
     <a class="make-own" href="#" onclick="location.href=location.pathname;return false;">make your own&nbsp;🐱</a>
@@ -61,7 +61,7 @@
   <section id="create-view" class="view" hidden>
     <header class="create-head">
       <h1>a tiny cat<br /><span>that loves you</span></h1>
-      <p class="tagline">make a little cat for someone you love. it remembers them, waits for them, and saves a smile for when they come back.</p>
+      <p class="tagline">make a little cat for someone you love. it remembers them, and saves a smile for when they come back.</p>
     </header>
 
     <div class="create-grid">
@@ -75,7 +75,7 @@
             <input class="feed-input" type="text" maxlength="120" placeholder="say something sweet…" aria-label="feed a compliment" />
             <button type="submit">feed 💛</button>
           </form>
-          <p class="pet-hint">this is live — pet it &amp; feed it 💛</p>
+          <p class="pet-hint">this one's live, give it a pet 💛</p>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
 
         <label class="field">
           <span>a note for when they first open it</span>
-          <textarea id="f-note" maxlength="140" rows="2" placeholder="made this for you 💌 — open me when you miss me"></textarea>
+          <textarea id="f-note" maxlength="140" rows="2" placeholder="made this for you 💌 open me when you miss me"></textarea>
         </label>
 
         <label class="field">
@@ -108,7 +108,7 @@
         </div>
 
         <div class="field">
-          <span>special days <em>(optional — shown on the day)</em></span>
+          <span>special days <em>(optional, shown on the day)</em></span>
           <div id="occasion-list"></div>
           <button type="button" id="add-occasion" class="add-btn">+ add a special day</button>
         </div>
@@ -116,13 +116,13 @@
         <button type="submit" class="make-btn">make my cat 🐱</button>
 
         <div id="link-out" class="link-out" hidden>
-          <p>here's the link — send it to them 💛</p>
+          <p>here's the link, send it to them 💛</p>
           <div class="link-row">
             <input id="link-field" type="text" readonly />
             <button type="button" id="copy-btn">copy link</button>
           </div>
           <a id="open-btn" class="open-link" target="_blank" rel="noopener">open it yourself ↗</a>
-          <p class="privacy-note">your words live only inside this link — they never touch a server.</p>
+          <p class="privacy-note">your words live only inside this link. they never reach a server.</p>
         </div>
       </form>
     </div>

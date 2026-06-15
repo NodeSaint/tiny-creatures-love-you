@@ -1,5 +1,5 @@
 // share.js — turn a "gift" object into a shareable link and back.
-// All personalized data lives in the URL *fragment* (after #), which browsers
+// All personal data lives in the URL *fragment* (after #), which browsers
 // never send to a server, so the love notes physically cannot leak.
 
 const SCHEMA_VERSION = 1;
